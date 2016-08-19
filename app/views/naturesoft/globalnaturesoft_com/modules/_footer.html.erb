@@ -1,0 +1,96 @@
+<footer id="footWrapper" class="footer-bg dark">
+
+    <div class="footer-top">
+        <div class="container">
+            <p class="lg-txt f-left white">
+                Think Right Do Right, It is <span class="main-color heavy">GLOBAL NATURESOFT</span> All You Need.
+            </p>
+            <a class="f-right btn uppercase main-gradient skew-btn" href="tel:+84979744764"><span>HOTLINE: (+84) 97 974 4764</span></a>
+        </div>
+    </div>
+
+    <div class="footer-middle no-bg">
+        <div class="container">
+            <div class="row">
+                
+                <div class="clearfix over-hidden">
+                    
+                    <!-- Our Friends footer cell start -->
+                    <% Naturesoft::Articles::Category.get_by_level(1).each do |menu| %>
+                        <% if menu.children.present? and menu.id == 13 %>
+                            <div class="col-md-3">
+                                <h3><%= menu.name %></h3>
+                                <ul class="menu-widget">
+                                    <% menu.children.each do |child_1| %>
+                                        <li><%= link_to child_1.name, post_detail_path(category_id: child_1.id) %></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        <% end %>
+                    <% end %>
+                    <!-- Our Friends footer cell start -->
+                    
+                    <!-- Our Friends footer cell start -->
+                    <% Naturesoft::Articles::Category.get_by_level(1).each do |menu| %>
+                        <% if menu.children.present? and menu.id == 14 %>
+                            <div class="col-md-3">
+                                <h3><%= menu.name %></h3>
+                                <ul class="menu-widget">
+                                    <% menu.children.each do |child_1| %>
+                                        <li><%= link_to child_1.name, post_detail_path(category_id: child_1.id) %></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        <% end %>
+                    <% end %>
+                    <!-- Our Friends footer cell start -->
+                    
+                    <!-- Our Friends footer cell start -->
+                    <% Naturesoft::Articles::Category.get_by_level(1).each do |menu| %>
+                        <% if menu.children.present? and menu.id == 15 %>
+                            <div class="col-md-3">
+                                <h3><%= menu.name %></h3>
+                                <ul class="menu-widget">
+                                    <% menu.children.each do |child_1| %>
+                                        <li><%= link_to child_1.name, post_detail_path(category_id: child_1.id) %></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        <% end %>
+                    <% end %>
+                    <!-- Our Friends footer cell start -->
+                    
+                    <!-- Tags Cloud footer cell start -->
+                    <div class="col-md-3 last contact-widget">
+                        <h3>Contact Us</h3>
+                        <ul class="details">
+                            <li><i class="fa fa-map-marker"></i><span>188, Street 1, Ward 16, Go Vap District, Ho Chi Minh City, Viet Nam</span></li>
+                            <li><i class="fa fa-envelope"></i><span><a href="mailto:soft.support@hoangkhang.com.vn">soft.support@hoangkhang.com.vn</a></span></li>
+                            <li><i class="fa fa-phone"></i><span><a href="tel:+84839847690">Office: +84 83 984 7690</a> - Ext: 204</span></li>
+                            <li><i class="fa fa-phone"></i><span><a href="tel:+84976009003">Technical: +84 97 600 9003</a></span></li>
+                            <li><i class="fa fa-phone"></i><span><a href="tel:+84979744764">Hotline: +84 97 974 4764</a></span></li>
+                            <li><i class="fa fa-skype"></i><span><a href="skype:luanpm88?chat">Live support - Chat now</a></span></li>
+                        </ul>
+                    </div>
+                    <!-- Tags Cloud footer cell start --> 
+                </div>
+                
+            </div>
+        </div>	
+    </div>
+                    
+    <!-- footer bottom bar start -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="copyrights f-left white">© Copyrights <b class="main-color">GLOBAL NATURESOFT</b> 2016. All rights reserved.</div>
+            <div class="social-list f-right">
+                <a href="https://www.facebook.com/Global-Naturesoft-623551254472451/" data-toggle="tooltip" data-placement="top" data-original-title="Facebook"><i class="fa fa-facebook ic-facebook no-border sm-icon"></i></a>
+                <a href="https://twitter.com/GNaturesoft" data-toggle="tooltip" data-placement="top" data-original-title="Twitter"><i class="fa fa-twitter ic-twitter no-border sm-icon"></i></a>
+                <a href="https://www.linkedin.com/in/global-naturesoft-4493aa122" data-toggle="tooltip" data-placement="top" data-original-title="Linkedin"><i class="fa fa-linkedin ic-linkedin no-border sm-icon"></i></a>
+                <a href="https://www.youtube.com/channel/UCd0uK1eQ_PtRJ1AppsUiqhw" data-toggle="tooltip" data-placement="top" data-original-title="YouTube"><i class="fa fa-youtube-play ic-youtube no-border sm-icon"></i></a>
+                <a href="https://plus.google.com/u/2/113600395564379102837" data-toggle="tooltip" data-placement="top" data-original-title="Google Plus"><i class="fa fa-google-plus ic-gplus no-border sm-icon"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- footer bottom bar end -->
+</footer>

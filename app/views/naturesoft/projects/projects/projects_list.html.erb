@@ -1,0 +1,50 @@
+<% content_for :page_title do %>
+    Portfolio
+<% end %>
+
+<div class="breadcrumbs">
+    <div class="container">
+        <%= link_to "Home", naturesoft_globalnaturesoft_com.root_path %><i class="fa fa-long-arrow-right main-color"></i><span>Portfolio</span>
+    </div>
+</div>
+
+<div class="md-padding">
+    <div class="container">
+        <div class="portfolio p-1-col simple" id="container">
+            <% @projects.each do |item| %>
+            <div class="portfolio-item develop">
+                <div class="img-holder">
+                    <!-- Image Size 400x267 -->
+                    <!--<%= link_to image_tag("/frontend/assets/images/portfolio/default.jpg"), "" %>-->
+                    <%= link_to image_tag(image_src(item.main_image.image.medium), alt: item.name), projects_detail_path(project_id: item.id) %>
+                </div>
+                <div class="name-holder">
+                    <h4><%= link_to item.name, projects_detail_path(project_id: item.id) %></h4>
+                    <p class="description"><%= truncate(strip_tags(item.description), length: 150) %></p>
+                    <div class="meta">
+                        <ul class="list">
+                            <li><i class="fa fa-folder-open-o main-color"></i> <strong>Categories:</strong> </li>
+                            <li><i class="fa fa-user main-color"></i> <strong>By:</strong> Global Naturesoft</li>
+                            <li><i class="fa fa-calendar main-color"></i> <strong>Start Date:</strong> </li>
+                            <li><i class="fa fa-calendar main-color"></i> <strong>End Date:</strong> </li>
+                            <li><i class="fa fa-check main-color"></i> <strong>Customer:</strong> </li>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+        <nav>
+            <ul class="pagination style2">
+                <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-long-arrow-left"></i></span></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-long-arrow-right"></i></span></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

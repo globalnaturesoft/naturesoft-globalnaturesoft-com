@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Home | Global Naturesoft</title>
+    <meta name="description" content="Global Naturesoft | Hoang Khang Incotech">
+    <meta name="author" content="Naturesoft">
+
+    <!-- Devices Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Put favicon.ico and apple-touch-icon(s).png in the images folder -->
+    <link rel="shortcut icon" href="/frontend/assets/images/favicon.png">
+    
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Oswald:400,100,300,500,700%7CLato:400,300,700,900&subset=latin,latin-ext" %>
+    <!-- Plugins CSS files -->
+    <link rel="stylesheet" href="/frontend/assets/css/assets.css">
+
+    <!-- REVOLUTION SLIDER STYLES -->
+    <link rel="stylesheet" href="/frontend/assets/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" type="text/css">
+    <link rel="stylesheet" href="/frontend/assets/revolution/css/settings.css" type="text/css">
+    <link rel="stylesheet" href="/frontend/assets/revolution/css/navigation.css" type="text/css">
+
+    <link id="theme_css" rel="stylesheet" href="/frontend/assets/css/light.css">
+    <link id="theme_css" rel="stylesheet" href="/frontend/assets/css/custom.css">
+    <link id="skin_css" rel="stylesheet" href="/frontend/assets/css/skins/default.css">
+
+    <script type="text/javascript">
+        $SA = {
+            s: 259314,
+            asynch: 1,
+            useBlacklistUrl: 1
+        };
+        (function() {
+            var sa = document.createElement("script");
+            sa.type = "text/javascript";
+            sa.async = true;
+            sa.src = ("https:" == document.location.protocol ? "https://" + $SA.s + ".sa" : "http://" + $SA.s + ".a") + ".siteapps.com/" + $SA.s + ".js";
+            var t = document.getElementsByTagName("script")[0];
+            t.parentNode.insertBefore(sa, t);
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- site preloader start -->
+    <div class="page-loader"></div>
+    <!-- site preloader end -->
+    <div class="pageWrapper">
+    
+        <!-- Top bar start -->
+        <%= render "/modules/top_bar" %>
+        <!-- Top bar end -->
+        
+        <!-- Header start -->
+        <header class="top-head minimal">
+            <div class="container">
+                
+                <!-- Logo start -->
+                <%= render "/modules/logo" %>
+                <!-- Logo end -->
+    
+                <div class="responsive-nav">
+                    
+                    <!-- top navigation menu start -->
+                    <%= render "/modules/top_navigation_menu" %>
+                    <!-- top navigation menu end -->
+                    
+                    <div class="f-right">
+                        <!-- top search start -->
+                    
+                        <!-- top search end -->
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+        <!-- Header start -->
+    
+        <!-- Content start -->
+        <div class="pageContent">
+            
+            <% if content_for?(:page_title) %>
+                <div class="page-title tbg">
+                    <div class="container">
+                        <h1><%= yield(:page_title) %></h1>
+                    </div>
+                </div>
+            <% end %>
+            
+            <%= yield %>
+            
+        </div>
+        <!-- Content start -->
+    
+        <!-- Footer start -->
+        <%= render "/modules/footer" %>
+        <!-- Footer end -->
+    
+    </div>
+    
+    <!-- Back to top Link -->
+    <a id="to-top" href="#"><span class="fa fa fa-angle-up"></span></a>
+    
+    <%= render "/modules/js_files" %>
+    
+    <!-- SLIDER REVOLUTION  -->
+    <%= javascript_include_tag "/frontend/assets/js/easyshare.js" %>
+    <script type="text/javascript" src="/frontend/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/frontend/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    
+    <%= javascript_include_tag "/frontend/assets/js/jquery.gmap.js" %>
+    <%= javascript_include_tag "/frontend/assets/js/jquery.validate.js" %>
+    <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+    
+    <script type="text/javascript">
+        var tpj = jQuery;
+        var revapi429;
+        tpj(window).load(function() {
+            if (tpj("#rev_slider_429_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_429_1");
+            } else {
+                revapi429 = tpj("#rev_slider_429_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "/frontend/assets/revolution/js/",
+                    sliderLayout: "fullwidth",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "on",
+                        keyboard_direction: "vertical",
+                        mouseScrollNavigation: "off",
+                        mouseScrollReverse: "default",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "vertical",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "metis",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: true,
+                            tmp: '',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            }
+                        },
+                        bullets: {
+                            enable: false,
+                            hide_onmobile: true,
+                            hide_under: 778,
+                            style: "hermes",
+                            hide_onleave: false,
+                            direction: "vertical",
+                            h_align: "right",
+                            v_align: "center",
+                            h_offset: 20,
+                            v_offset: 0,
+                            space: 5,
+                            tmp: ''
+                        }
+                    },
+                    responsiveLevels: [1240, 1024, 778, 480],
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: [1200, 1024, 768, 480],
+                    gridheight: [650, 650, 960, 720],
+                    lazyType: "smart",
+                    shadow: 0,
+                    spinner: "spinner2",
+                    autoHeight: "off",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        });
+        
+        /*Contact Page*/
+        $(".form-validate-contact").validate();
+        
+        $(function(){
+           $('#ROADMAP').gMap({
+                latitude: 10.847561,
+                longitude: 106.657725,
+                maptype: 'ROADMAP', // 'HYBRID', 'SATELLITE', 'ROADMAP' or 'TERRAIN'
+                zoom: 12,
+                markers:[
+                    {
+                        address: "",
+                        html: "",
+                        popup: false
+                    },
+                    {
+                        latitude: 10.847561,
+                        longitude: 106.657725,
+                        html: "<b>GLOBAL NATURESOFT</b></br>188, Street 1, Ward 16, Go Vap District, </br> Ho Chi Minh City, Viet Nam"
+                    },
+                    {
+                        address: "",
+                        html: "_address"
+                    }
+                ],
+                icon: {
+                    image: "/frontend/assets/images/gmap_pin.png", 
+                    iconsize: [26, 46],
+                    iconanchor: [12, 46]
+                },
+                controls: {
+                    panControl: true,
+                    zoomControl: true,
+                    mapTypeControl: true,
+                    scaleControl: false,
+                    streetViewControl: false,
+                    overviewMapControl: false
+                }
+           });
+        });
+        
+    </script>
+
+</body>
+
+</html>

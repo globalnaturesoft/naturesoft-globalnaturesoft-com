@@ -1,0 +1,36 @@
+.text-justify {
+    text-align: justify;
+}
+.md-padding, .section {
+    padding-top: 20px;
+}
+.mega-content > div > ul > li > span {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.tools {
+    display: none;
+}
+.top-nav ul li ul {
+    min-width: 250px;
+}
+label.error {
+    display: none !important;
+}
+.blog-single .post-item .post-info-container, .blog-single .post-item .post-content p {
+    font-size: 16px;
+    color: #333;
+}
+.post-content h3 {
+    margin-top: 35px;
+}
+.span-uppercase {
+    text-transform: uppercase;
+}
+li.active > a {
+    color: #25aae2;
+    cursor: default;
+}
+.cssload-lt:before, .cssload-rt:before, .cssload-lb:before, .cssload-rb:before {
+    border-top-color: #25aae2;
+}
