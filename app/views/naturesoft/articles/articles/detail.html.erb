@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-    Category Name
+    <%= !@article.nil? ? @article.title : @category.name %>
 <% end %>
 <div class="breadcrumbs">
 	<div class="container">
@@ -20,7 +20,7 @@
 					<article class="post-content">
 						
 						<div class="text-justify">
-							content
+							<%= !@article.nil? ? @article.content.html_safe : "Updating..." %>
 						</div>
 						
 						<div class="post-tools">
@@ -79,16 +79,9 @@
 		<div class="col-md-3 md-padding sidebar">
 			<div class="sidebar-widgets">
 				<ul>
-					
-						<li class="widget widget-categories">
-							<h4 class="widget-title"><span class="main-color"></span>AAA</h4>
-							<div class="widget-content">
-								<ul>
-									
-								</ul>
-							</div>
-						</li>
-					
+					<li class="widget widget-categories">
+						<%= position("globalnaturesoft_com::right-sidebar") %>
+					</li>
 				</ul>
 			</div>
 			

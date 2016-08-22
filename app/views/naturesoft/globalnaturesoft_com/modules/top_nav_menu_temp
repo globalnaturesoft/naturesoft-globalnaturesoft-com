@@ -1,0 +1,24 @@
+<nav class="top-nav">
+    <ul>
+        <li<% if params[:controller] == "home" %> class="selected"<% end %>><%= link_to "<span>Home</span>".html_safe, naturesoft_globalnaturesoft_com.root_path %></li>
+        <% Naturesoft::Articlesz::Category.get_by_level(1).each do |menu| %>
+            
+            <% if !menu.children.present? %>
+                <li><%= link_to "#{'<span>' + menu.name + '</span>'}".html_safe, naturesoft_articles.newest_article_categories_path(id: menu.id, parent_title: url_friendly(menu.name), title: url_friendly(menu.name)) %></li>            
+            <% elsif menu.children.present? %>
+                <li<% if params[:id].present? %><% if Naturesoft::Articles::Category.find(params[:id]).parent.id == menu.id %> class="selected"<% end %><% end %>>
+                    <%= link_to "#{'<span>' + menu.name + '</span>'}".html_safe, naturesoft_articles.newest_article_categories_path(id: menu.children.first.id, parent_title: url_friendly(menu.name), title: url_friendly(menu.children.first.name)) %>
+                    <ul>
+                        <% menu.children.each do |child_1| %>
+                            
+                            <li<% if params[:id] == child_1.id.to_s %> class="selected"<% end %>><%= link_to child_1.name, naturesoft_articles.newest_article_categories_path(id: child_1.id, parent_title: url_friendly(child_1.parent.name), title: url_friendly(child_1.name)) %></li>
+                                
+                        <% end %>
+                    </ul>
+                </li>
+            <% end %>
+        <% end %>
+        <li<% if params[:projects] == "projects_list" %> class="selected"<% end %>><%= link_to "<span>Portfolio</span>".html_safe, naturesoft_projects.projects_list_path %></li>
+        <li<% if params[:projects] == "projects_list" %> class="selected"<% end %>><%= link_to "<span>Contact</span>".html_safe, naturesoft_contacts.contacts_path %></li>
+    </ul>
+</nav>
