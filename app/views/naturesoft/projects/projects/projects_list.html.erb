@@ -15,8 +15,7 @@
             <div class="portfolio-item develop">
                 <div class="img-holder">
                     <!-- Image Size 400x267 -->
-                    <!--<%= link_to image_tag("/frontend/assets/images/portfolio/default.jpg"), "" %>-->
-                    <%= link_to image_tag(image_src(item.main_image.image.medium), alt: item.name), projects_detail_path(project_id: item.id) %>
+                    <%= link_to image_tag(image_src(item.main_image.image.medium), size: "400x267", alt: item.name), projects_detail_path(project_id: item.id) %>
                 </div>
                 <div class="name-holder">
                     <h4><%= link_to item.name, projects_detail_path(project_id: item.id) %></h4>

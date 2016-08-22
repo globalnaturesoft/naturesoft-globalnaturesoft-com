@@ -16,11 +16,11 @@ module Naturesoft
         app.middleware.use ::ActionDispatch::Static, "#{root}/public"
       end
     
-      #config.to_prepare do
-      #  Dir.glob(Engine.root.join("app", "decorators", "**", "*_decorator*.rb")) do |c|
-      #    Rails.configuration.cache_classes ? require(c) : load(c)
-      #  end
-      #end
+      config.to_prepare do
+        Dir.glob(Engine.root.join("app", "decorators", "**", "*_decorator*.rb")) do |c|
+          Rails.configuration.cache_classes ? require(c) : load(c)
+        end
+      end
     
     end
   

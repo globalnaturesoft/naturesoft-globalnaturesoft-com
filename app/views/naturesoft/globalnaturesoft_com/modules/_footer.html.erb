@@ -16,18 +16,26 @@
                 <div class="clearfix over-hidden">
                     
                     <!-- Our Friends footer cell start -->
-                    <% Naturesoft::Articles::Category.get_by_level(1).each do |menu| %>
-                        <% if menu.children.present? and menu.id == 13 %>
-                            <div class="col-md-3">
-                                <h3><%= menu.name %></h3>
-                                <ul class="menu-widget">
-                                    <% menu.children.each do |child_1| %>
-                                        <li><%= link_to child_1.name, post_detail_path(category_id: child_1.id) %></li>
-                                    <% end %>
-                                </ul>
-                            </div>
-                        <% end %>
-                    <% end %>
+                    <div class="col-md-3">
+                        <h3>menu.name</h3>
+                        <ul class="menu-widget">
+                             menu.children.each do |child_1| %>
+                                <li>link_to child_1.name, post_detail_path (category_id: child_1.id) </li>
+                             end %>
+                        </ul>
+                    </div>
+                    <!-- Our Friends footer cell start -->
+                    
+                    <!-- Our Friends footer cell start -->
+                    <div class="col-md-3">
+                        
+                    </div>
+                    <!-- Our Friends footer cell start -->
+                    
+                    <!-- Our Friends footer cell start -->
+                    <div class="col-md-3">
+                        
+                    </div>
                     <!-- Our Friends footer cell start -->
                     
                     <!-- Our Friends footer cell start -->

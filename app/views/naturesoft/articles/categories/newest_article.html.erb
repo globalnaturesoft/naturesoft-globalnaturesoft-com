@@ -1,10 +1,10 @@
 <% content_for :page_title do %>
-    Category Name
+    <%= !@article.nil? ? @article.title : @category.name %>
 <% end %>
 <div class="breadcrumbs">
 	<div class="container">
 
-		<%= link_to "Home" %><i class="fa fa-long-arrow-right main-color"></i><span>ABC</span><i class="fa fa-long-arrow-right main-color"></i><span>DEF</span>
+		<%= link_to "Home" %><i class="fa fa-long-arrow-right main-color"></i><span>About Us</span><i class="fa fa-long-arrow-right main-color"></i><span>Who We Are</span>
 
 	</div>
 </div>
@@ -77,18 +77,12 @@
 		</div>
 		
 		<div class="col-md-3 md-padding sidebar">
+			
 			<div class="sidebar-widgets">
 				<ul>
-					
-						<li class="widget widget-categories">
-							<h4 class="widget-title"><span class="main-color"></span>AAA</h4>
-							<div class="widget-content">
-								<ul>
-									
-								</ul>
-							</div>
-						</li>
-					
+					<li class="widget widget-categories">
+						<%= position("globalnaturesoft_com::right-sidebar") %>
+					</li>
 				</ul>
 			</div>
 			

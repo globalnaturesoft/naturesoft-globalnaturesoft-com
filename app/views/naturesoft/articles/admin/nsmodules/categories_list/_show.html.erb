@@ -1,0 +1,12 @@
+<%
+  options = nsmodule.get_options
+  if options["parent_id"].present?
+    @category = Naturesoft::Articles::Category.find(options["parent_id"])
+  elsif params[:id].present?
+    @category = Naturesoft::Articles::Category.find(params[:id])
+  end
+%>
+
+<% if @category.present? and !@category.parent.nil? %>
+  <%= render "naturesoft/"+nsmodule.engine_name+"/admin/nsmodules/"+nsmodule.module_name+"/templates/right_sidebar" %>
+<% end %>
