@@ -11,3 +11,9 @@ Naturesoft::Projects::Engine.routes.draw do
     get "portfolio/:category_id" => "projects#list", as: :list
     get "portfolio/detail/:id" => "projects#detail", as: :projects_detail
 end
+
+Naturesoft::Contacts::Engine.routes.draw do
+    get "contact-us" => "contacts#contact", as: :contacts
+    post "contact-us" => "contacts#contact"
+    get "contact-us/success" => "contacts#success", as: :success
+end
