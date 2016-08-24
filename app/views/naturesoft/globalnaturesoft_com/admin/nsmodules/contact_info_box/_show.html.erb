@@ -2,6 +2,6 @@
   options = nsmodule.get_options
   contact_info = Naturesoft::Option.options("core")["core"]["site_info"]
 %>
-<%= render "naturesoft/globalnaturesoft_com/admin/nsmodules/"+nsmodule.module_name+"/templates/default",
+<%= render "naturesoft/globalnaturesoft_com/admin/nsmodules/"+nsmodule.module_name+"/templates/" + options["style"],
   contact_info: contact_info
 %>

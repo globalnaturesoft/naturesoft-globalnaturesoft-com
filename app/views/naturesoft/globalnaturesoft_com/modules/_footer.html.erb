@@ -5,7 +5,7 @@
             <p class="lg-txt f-left white">
                 Think Right Do Right, It is <span class="main-color heavy">GLOBAL NATURESOFT</span> All You Need.
             </p>
-            <a class="f-right btn uppercase main-gradient skew-btn" href="tel:+84979744764"><span>HOTLINE: (+84) 97 974 4764</span></a>
+            <%= position("globalnaturesoft_com::footer-top") %>
         </div>
     </div>
 
@@ -31,36 +31,6 @@
                     <div class="col-md-3">
                         <%= position("globalnaturesoft_com::footer-column-3") %>
                     </div>
-                    <!-- Our Friends footer cell start -->
-                    
-                    <!-- Our Friends footer cell start -->
-                    <% Naturesoft::Articles::Category.get_by_level(1).each do |menu| %>
-                        <% if menu.children.present? and menu.id == 14 %>
-                            <div class="col-md-3">
-                                <h3><%= menu.name %></h3>
-                                <ul class="menu-widget">
-                                    <% menu.children.each do |child_1| %>
-                                        <li><%= link_to child_1.name, post_detail_path(category_id: child_1.id) %></li>
-                                    <% end %>
-                                </ul>
-                            </div>
-                        <% end %>
-                    <% end %>
-                    <!-- Our Friends footer cell start -->
-                    
-                    <!-- Our Friends footer cell start -->
-                    <% Naturesoft::Articles::Category.get_by_level(1).each do |menu| %>
-                        <% if menu.children.present? and menu.id == 15 %>
-                            <div class="col-md-3">
-                                <h3><%= menu.name %></h3>
-                                <ul class="menu-widget">
-                                    <% menu.children.each do |child_1| %>
-                                        <li><%= link_to child_1.name, post_detail_path(category_id: child_1.id) %></li>
-                                    <% end %>
-                                </ul>
-                            </div>
-                        <% end %>
-                    <% end %>
                     <!-- Our Friends footer cell start -->
                     
                     <!-- Tags Cloud footer cell start -->

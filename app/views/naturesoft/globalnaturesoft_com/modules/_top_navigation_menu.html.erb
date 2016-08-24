@@ -3,17 +3,17 @@
         <% Naturesoft::Menus::Menu.where(parent_id: nil).each do |menu| %>
             <li>
                 <% if menu.children.empty? %>
-                    <a href="<%= menu.path %>">
+                    <a href="<%= menu.url %>">
                         <span><%= menu.name %></span>
                     </a>
                 <% else %>
-                    <a href="<%= menu.path %>">
+                    <a href="<%= menu.url %>">
                         <span><%= menu.name %></span>
                     </a>
                     <ul>
                         <% menu.children.each do |child| %>
                             <li>
-                                <a href="<%= child.path %>">
+                                <a href="<%= child.url %>">
                                     <span><%= child.name %></span>
                                 </a>
                             </li>
