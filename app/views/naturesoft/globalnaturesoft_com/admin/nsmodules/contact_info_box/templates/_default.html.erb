@@ -1,6 +1,6 @@
 <h3>Contact Us</h3>
 <ul class="details">
-    <li><i class="fa fa-map-marker"></i><span><%= contact_info["address"] %></span></li>
+    <li><i class="fa fa-map-marker"></i><span><%= contact_info["address"].html_safe %></span></li>
     <li><i class="fa fa-envelope"></i><span><a href="mailto:<%= contact_info["email_1"] %>"><%= contact_info["email_1"] %></a></span></li>
     <li><i class="fa fa-phone"></i><span><a href="tel:<%= contact_info["phone_1"] %>">Office: <%= contact_info["phone_1"] %></a></span></li>
     <li><i class="fa fa-phone"></i><span><a href="tel:<%= contact_info["phone_2"] %>">Technical: <%= contact_info["phone_2"] %></a></span></li>
