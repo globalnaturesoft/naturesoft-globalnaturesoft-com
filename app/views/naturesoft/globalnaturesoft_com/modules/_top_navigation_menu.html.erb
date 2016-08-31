@@ -1,6 +1,6 @@
 <nav class="top-nav">
     <ul>
-        <% Naturesoft::Menus::Menu.where(parent_id: nil).each do |menu| %>
+        <% Naturesoft::Menus::Menu.where(parent_id: nil).order(custom_order: "asc").each do |menu| %>
             <li>
                 <% if menu.children.empty? %>
                     <a href="<%= menu.url %>">
