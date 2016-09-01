@@ -1,3 +1,5 @@
+<% content_for :head_title, "Blog Detail" %>
+
 <% content_for :page_title do %>
     <%= !@article.nil? ? @article.title : @category.name %>
 <% end %>
