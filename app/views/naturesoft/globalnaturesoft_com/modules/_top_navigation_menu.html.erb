@@ -2,7 +2,7 @@
     <ul>
         <% Naturesoft::Menus::Menu.where(parent_id: nil).order(custom_order: "asc").each do |menu| %>
             <li>
-                <% if menu.children.empty? %>
+                <% if menu.children.order(custom_order: "asc").empty? %>
                     <a href="<%= menu.url %>">
                         <span><%= menu.name %></span>
                     </a>
@@ -11,7 +11,7 @@
                         <span><%= menu.name %></span>
                     </a>
                     <ul>
-                        <% menu.children.each do |child| %>
+                        <% menu.children.order(custom_order: "asc").each do |child| %>
                             <li>
                                 <a href="<%= child.url %>">
                                     <span><%= child.name %></span>
