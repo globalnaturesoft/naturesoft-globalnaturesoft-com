@@ -1,3 +1,4 @@
+<% content_for :head_title, "Portfolio" %>
 <% content_for :page_title do %>
     Portfolio
 <% end %>
@@ -15,18 +16,19 @@
             <div class="portfolio-item develop">
                 <div class="img-holder">
                     <!-- Image Size 400x267 -->
-                    <%= link_to image_tag(image_src(item.main_image.image.medium), size: "400x267", alt: item.name) %>
+                    <%= image_tag(image_src(item.main_image.image.medium), size: "400x267", alt: item.name) %>
                 </div>
                 <div class="name-holder">
-                    <h4><%= link_to item.name %></h4>
+                    <h4><%= item.name %></h4>
                     <p class="description"><%= truncate(strip_tags(item.description), length: 150) %></p>
                     <div class="meta">
                         <ul class="list">
-                            <li><i class="fa fa-folder-open-o main-color"></i> <strong>Categories:</strong> </li>
-                            <li><i class="fa fa-user main-color"></i> <strong>By:</strong> Global Naturesoft</li>
-                            <li><i class="fa fa-calendar main-color"></i> <strong>Start Date:</strong> </li>
-                            <li><i class="fa fa-calendar main-color"></i> <strong>End Date:</strong> </li>
-                            <li><i class="fa fa-check main-color"></i> <strong>Customer:</strong> </li>
+                            <!--<li><i class="fa fa-folder-open-o main-color"></i> <strong>Categories:</strong> </li>-->
+                            <% if item.website.present? %><li><i class="fa fa-external-link main-color"></i> <strong>Website:</strong> <%= link_to(truncate(strip_tags(item.website), length: 30), item.website, target: "_blank") %></li><% end %>
+                            <li><i class="fa fa-check main-color"></i> <strong>Investor:</strong> <%= item.investor %></li>
+                            <li><i class="fa fa-calendar main-color"></i> <strong>Start Date:</strong> <%= item.start_date %></li>
+                            <li><i class="fa fa-calendar main-color"></i> <strong>End Date:</strong> <%= item.end_date %></li>
+                            <li><i class="fa fa-user main-color"></i> <strong>Design by:</strong> Global Naturesoft</li>
                         </ul>
                     
                     </div>
@@ -34,7 +36,7 @@
             </div>
             <% end %>
         </div>
-        <nav>
+        <!--<nav>
             <ul class="pagination style2">
                 <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-long-arrow-left"></i></span></a></li>
                 <li class="active"><a href="#">1</a></li>
@@ -44,6 +46,6 @@
                 <li><a href="#">5</a></li>
                 <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-long-arrow-right"></i></span></a></li>
             </ul>
-        </nav>
+        </nav>-->
     </div>
 </div>

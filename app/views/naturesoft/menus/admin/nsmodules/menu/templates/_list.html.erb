@@ -1,4 +1,4 @@
-<% if parent_menu.present? %>
+<% if parent_menu.present? and (params[:menu_id] == parent_menu.id or parent_menu.children.map(&:id).include?(params[:menu_id])) %>
   <li class="widget widget-categories">
     
     <h4 class="widget-title"><span class="main-color"></span><%= parent_menu.name %></h4>

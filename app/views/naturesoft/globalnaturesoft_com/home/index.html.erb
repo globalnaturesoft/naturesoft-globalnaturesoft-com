@@ -7,19 +7,59 @@
     </div>
 </div>
 
-<div class="md-padding">
+<div class="md-padding" style="padding-bottom: 40px;">
+								<br />			
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="filter-by style2">
-                    <ul id="filters">
-                        <li class="selected"><a href="#" class="filter" data-filter="*"><span>All</span></a></li>
-                        
-                    </ul>
-                </div>
+        
+        <div class="heading main centered" style="margin-bottom: 0">
+            <h3 class="uppercase lg-title">About <span class="main-color">Us</span></h3>
+            <p>Founded in 2008, we started off pretty small, but grew quickly. We work with passionate individuals who are true experts in their own field and who, through extensive experience working with certain applications have developed a first-rate understanding of how they can help specific types of businesses. </p>
+			<a href="/about-us/who-we-are.html" class="m-t-2 btn btn-outlined main-border btn-lg fx" data-animate="fadeInUp" data-animation-delay="700">Read more</a>
+        </div>
+    </div>
+    
+</div>
 
-                <div class="portfolio grid p-3-cols p-style1" id="masonry">
-                    
+<div class="md-padding" style="background: #f7f7f7;">
+	<br />
+    <div class="container">
+		<div class="heading style2">
+            <h4 class="uppercase">Recent <span class="main-color">Projects</span></h4>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="filter-by style2">
+                        <ul id="filters">
+                            <li class="selected"><a href="#" class="filter" data-filter="*"><span>All</span></a></li>
+                            <% @categories.each do |item| %>
+                                <% if item.projects.count > 0 %>
+                                     <li><a href="#" class="filter" data-filter=".cat-<%= item.id %>"><span><%= item.name %></span></a></li>
+                                <% end %>
+                            <% end %>
+                        </ul>
+                    </div>
+
+                    <div class="portfolio grid p-3-cols p-style1" id="masonry">
+                        <% @projects.each do |item| %>
+                        <div class="portfolio-item <%= (item.categories.map {|i| "cat-#{i.id}"}).join(" ") %>">
+                            <figure>
+                                <div class="port-img">
+                                    <div class="icon-links">
+                                        <%= link_to '<i class="fa fa-link"></i>'.html_safe, "", class: "link white-bg" %>
+                                        <a href="<%= image_src(item.main_image.image.big) %>" class="zoom main-bg" title="<%= item.name %>"><i class="fa fa-search-plus"></i></a>
+                                    </div>
+                                    <%= image_tag(image_src(item.main_image.image.medium), size: "378x", alt: item.name) %>
+                                </div>
+                                <figcaption>
+                                    <div class="port-captions">
+                                        <h4 class="uppercase"><%= link_to item.name, "", class: "main-color" %></h4>
+                                    </div>
+                                </figcaption>				
+                            </figure>
+                        </div>
+                        <% end %>
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,6 +67,78 @@
 </div>
 
 <div class="md-padding">
+	<br />
+	<div class="container">
+		<div class="heading style2">
+            <h4 class="uppercase">Industries <span class="main-color"></span></h4>
+        </div>
+		
+		<div class="row">
+			<div class="col-md-4">
+				<div class="icon-box simple">
+					<i class="fa fa-building-o icon-bg gry-bg md-icon border3px"></i>
+					<div class="icon-simple-desc">
+						<h4 class="uppercase main-color">Small & Medium companies</h4>
+						<p>Global Naturesoft SMB app provides business solutions to manage your finances, inventory and operations as well as grow... <a href="/industries/small-medium-companies.html"> <span class="main-color">Read more</span></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box simple">
+					<i class="fa fa-shopping-cart icon-bg gry-bg md-icon border3px"></i>
+					<div class="icon-simple-desc">
+						<h4 class="uppercase main-color">E-commerce & Retail</h4>
+						<p>Commerce web development has indeed become a necessity instead of a means to drive greater traffic. We, at Global Naturesoft... <a href="/industries/ecommerce-retail.html"> <span class="main-color">Read more</span></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box simple">
+					<i class="fa fa-graduation-cap icon-bg gry-bg md-icon border3px"></i>
+					<div class="icon-simple-desc">
+						<h4 class="uppercase main-color">Education</h4>
+						<p>Web-app have reinvented how education will be provided to the present and future generations. At a time of cloud computing... <a href="/industries/education.html"> <span class="main-color">Read more</span></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row m-t-3">
+			<div class="col-md-4">
+				<div class="icon-box simple">
+					<i class="fa fa-suitcase icon-bg gry-bg md-icon border3px"></i>
+					<div class="icon-simple-desc">
+						<h4 class="uppercase main-color">Hospitality & Travel</h4>
+						<p>Our team has developed many end-to-end solutions for restaurants and hotels: back-end, cloud and front-end on the web,... <a href="/industries/hospitality-travel.html"> <span class="main-color">Read more</span></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box simple">
+					<i class="fa fa-credit-card icon-bg gry-bg md-icon border3px"></i>
+					<div class="icon-simple-desc">
+						<h4 class="uppercase main-color">Finance & Insurance</h4>
+						<p>The financial sector has evolved exponentially and has laid its compelling demand on IT services for better prospect. Financial... <a href="/industries/finance-insurance.html"> <span class="main-color">Read more</span></a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="icon-box simple">
+					<i class="fa fa-ship icon-bg gry-bg md-icon border3px"></i>
+					<div class="icon-simple-desc">
+						<h4 class="uppercase main-color">Logistics & Transportation</h4>
+						
+						<p>Our Logistics & Transportation solutions offerings have helped companies improve bottom-line operational efficiency... <a href="/industries/logistics-transportation.html"> <span class="main-color">Read more</span></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="md-padding" style="background: #f7f7f7;">
+	<br />
     <div class="container">
 
         <div class="heading style2">
@@ -35,31 +147,31 @@
 
         <div class="horizontal-slider" data-slides_count="6" data-scroll_amount="6" data-slider-speed="300" data-slider-infinite="1" data-slider-dots="1" data-slider-arrows="0">
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/1.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/1.png"></span>
             </div>
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/2.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/2.png"></span>
             </div>
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/3.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/3.png"></span>
             </div>
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/4.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/4.png"></span>
             </div>
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/5.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/5.png"></span>
             </div>
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/6.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/6.png"></span>
             </div>
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/7.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/7.png"></span>
             </div>
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/8.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/8.png"></span>
             </div>
             <div>
-                <a href="#"><img alt="" src="frontend/assets/images/clients/9.png"></a>
+                <span href="#"><img alt="" src="frontend/assets/images/clients/9.png"></span>
             </div>
         </div>
 

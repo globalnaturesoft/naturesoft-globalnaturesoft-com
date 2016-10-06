@@ -1,4 +1,4 @@
-<% content_for :head_title, "Blog Detail" %>
+<% content_for :head_title, !@article.nil? ? @article.title : @category.name %>
 
 <% content_for :page_title do %>
     <%= !@article.nil? ? @article.title : @category.name %>
@@ -19,8 +19,11 @@
 				
 				<div class="post-item">
 					
-					<article class="post-content">
-						
+					<article class="post-content" style="width: 100%;">
+						<div class="text-center">
+							<img style="max-width: 650px" src="<%= image_src(@article.image_url) %>" />
+						</div>
+						<br />
 						<div class="text-justify">
 							<%= !@article.nil? ? @article.content.html_safe : "Updating..." %>
 						</div>

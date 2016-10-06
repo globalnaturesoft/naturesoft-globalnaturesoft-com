@@ -17,8 +17,8 @@ end
 
 if Naturesoft::Core.available?("contacts")
   Naturesoft::Contacts::Engine.routes.draw do
-    get "contact-us" => "contacts#contact", as: :contacts
-    post "contact-us" => "contacts#contact"
-    get "contact-us/success" => "contacts#success", as: :success
+    get "contact-us" => "contacts#contact"
+    post "contact.html" => "contacts#send_message", as: :contacts
+    get "contact/success.html" => "contacts#success", as: :success
   end
 end

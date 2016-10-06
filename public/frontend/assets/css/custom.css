@@ -17,7 +17,7 @@
 label.error {
     display: none !important;
 }
-.blog-single .post-item .post-info-container, .blog-single .post-item .post-content p {
+.blog-single .post-item .post-info-container, .blog-single .post-item .post-content p, , .blog-single .post-item .post-content li {
     font-size: 16px;
     color: #333;
 }
@@ -33,4 +33,10 @@ li.active > a {
 }
 .cssload-lt:before, .cssload-rt:before, .cssload-lb:before, .cssload-rb:before {
     border-top-color: #25aae2;
+}
+figure div.port-img {
+    border: 2px #ccc solid;
+    background: #eee;
+    padding: 10px;
+    box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
 }

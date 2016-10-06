@@ -1,18 +1,18 @@
 <nav class="top-nav">
     <ul>
-        <% Naturesoft::Menus::Menu.where(parent_id: nil).order(custom_order: "asc").each do |menu| %>
-            <li>
-                <% if menu.children.order(custom_order: "asc").empty? %>
+        <% Naturesoft::Menus::Menu.where(parent_id: nil).where(status: "active").order(custom_order: "asc").each do |menu| %>
+            <li class="<%= "selected" if menu.id == params[:menu_id] or menu.children.map(&:id).include?(params[:menu_id]) %>">
+                <% if menu.children.where(status: "active").empty? %>
                     <a href="<%= menu.url %>">
                         <span><%= menu.name %></span>
                     </a>
                 <% else %>
-                    <a href="<%= menu.url %>">
+                    <a href="#" style="cursor: default">
                         <span><%= menu.name %></span>
                     </a>
                     <ul>
-                        <% menu.children.order(custom_order: "asc").each do |child| %>
-                            <li>
+                        <% menu.children.where(status: "active").order(custom_order: "asc").each do |child| %>
+                            <li class="<%= "selected" if child.id == params[:menu_id] %>">
                                 <a href="<%= child.url %>">
                                     <span><%= child.name %></span>
                                 </a>
@@ -24,4 +24,6 @@
         <% end %>
     </ul>
 </nav>
+
+
 

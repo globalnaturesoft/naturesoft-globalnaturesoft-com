@@ -18,7 +18,7 @@
             </div>
 
             <%= form_for Naturesoft::Contacts::Contact.new, url: contacts_path, html: {class: "form-validate-contact" } do |f| %>
-
+            <%= hidden_field_tag(:id, params[:id]) %>
                 <div class="row form-group over-hidden">
                     
                     <div class="col-md-4">
@@ -42,14 +42,14 @@
 
                     <div class="col-md-12">
                         <%= f.label "Subject *", for: "contact-subject" %>
-                        <%= f.text_field :subject, class: "form-control required", id: "contact-subject" %>
+                        <input type="text" class="form-control required" name="msg[subject]" id="contact-subject">
                     </div>
 
                 </div>
 
                 <div class="form-group over-hidden">
                     <%= f.label "Message *", for: "contact-message" %>
-                    <%= f.text_area :message, rows: '6', cols: '30', class: "form-control required", id: "contact-message" %>
+                    <textarea rows="6" cols="30" class="form-control required" name="msg[message]" id="contacts-message"></textarea>
                 </div>
 
                 <div class="tbl wid-70">
